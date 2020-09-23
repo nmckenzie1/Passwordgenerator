@@ -8,7 +8,10 @@ const randomFunc = {
 };
 
     myBtn.addEventListener('click', () => {
-    var length = prompt("How long would you like your password to be.                                 Passwords must be between 8-128 characters.");
+    var length = (function ask() {
+        var n = prompt('How long would you like your password to be.                                 Passwords must be between 8-128 characters.');
+        return isNaN(n) || +n > 128 || +n < 8 ? ask() : n;
+      }());
     var upperCase = confirm("Would you like to use upper case letters??");
     var lowerCase = confirm("Would you like to use lower case letters?");
     var specialchars = confirm("Would you like to use special characters?");
