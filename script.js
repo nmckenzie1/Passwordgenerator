@@ -16,7 +16,7 @@ const randomFunc = {
     var lowerCase = confirm("Would you like to use lower case letters?");
     var specialchars = confirm("Would you like to use special characters?");
     var numerics = confirm("Would you like to use numerics?");
-    password.placeholder = generatePassword(upperCase, lowerCase, numerics, specialchars, length);
+    password.textContent = generatePassword(upperCase, lowerCase, numerics, specialchars, length);
     
 });
 

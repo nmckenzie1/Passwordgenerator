@@ -3,7 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+#demo {
+  text-align: center;
+}
 html,
 body,
 .wrapper {
