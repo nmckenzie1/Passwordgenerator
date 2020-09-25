@@ -1,6 +1,4 @@
-
-
-const randomFunc = {
+var randomFunc = {
     upper: getRandomUpperCase,
     lower: getRandomLowerCase,
     number: getRandomNumber,
@@ -20,17 +18,14 @@ const randomFunc = {
     
 });
 
-
 function generatePassword(lower, upper, number, symbol, length) {
-
-
 
     let generatedPassword = '';
 
-    const typesCount = lower + upper + number + symbol;
+    var typesCount = lower + upper + number + symbol;
     console.log('typesCount: ',typesCount);
 
-    const typesArr = [{ lower }, { upper } , { number }, { symbol} ].filter
+    var typesArr = [{ lower }, { upper } , { number }, { symbol} ].filter
        (item => Object.values(item)[0]);
 
     if (typesCount === 0) {
@@ -38,16 +33,14 @@ function generatePassword(lower, upper, number, symbol, length) {
     }
     for (let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
-            const funcName = Object.keys(type)[0];
+            var funcName = Object.keys(type)[0];
 
             generatedPassword += randomFunc[funcName]();
         });
     }
-    const finalPAssword = generatedPassword.slice(0, length);
+    var finalPAssword = generatedPassword.slice(0, length);
     return finalPAssword;
 }
-
-
 
 function getRandomUpperCase() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
