@@ -1,4 +1,4 @@
-//Creating an object for randomFunc so generatePassword can draw from generateRandomxxxx funcs
+//Creating an object for randomFunc to set keys so generatePassword can draw from generateRandomxxxx funcs
 
 var randomFunc = {
     upper: getRandomUpperCase,
@@ -26,14 +26,14 @@ var randomFunc = {
 });
 
 
-// this function checks the types and number of types of parameters selected from the user prompts and generates a random password from the "getRandomxxx functions in the randomFunc object" for the specified user password length
+// this function generates a string from parameters chosen by the user.
+//this function filters out types != true and adds characters in a loop with the length chosen by the user
 
 function generatePassword(lower, upper, number, symbol, length) {
 
     let generatedPassword = '';
 
     var typesCount = lower + upper + number + symbol;
-    console.log('typesCount: ',typesCount);
 
     var typesArr = [{ lower }, { upper } , { number }, { symbol} ].filter
        (item => Object.values(item)[0]);
